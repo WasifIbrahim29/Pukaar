@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/lin1"
+            android:layout_weight="30">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/part2"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="70"
+            android:id="@+id/lin2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:text="Are you currently taking any medication?"
+                android:textColor="@color/black"
+                android:id="@+id/question1"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="No"
+                android:paddingRight="230dp"
+                android:textAllCaps="false"
+                android:id="@+id/answer1"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_border"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                />
+
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="Yes"
+                android:paddingRight="230dp"
+                android:id="@+id/answer2"
+                android:textAllCaps="false"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_border"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

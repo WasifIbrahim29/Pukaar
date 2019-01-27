@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">PukaarApp</string>
+    <string name="title_activity_main">Range Picker</string>
+    <string name="selected_time">The time you picked will be shown here.</string>
+    <string name="selected_date">The date you picked will be shown here.</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="action_settings">Settings</string>
+    <string name="auto_highlight_selected_date_span">Auto highlight selected date span</string>
+
+
+
+    // activity_intro Strings
+
+    <string name="app_name_first_part">Pukaar-</string>
+    <string name="app_name_second_part">Reaching out to All</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="OR">OR</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="by_proceeding">By proceeding, you agree to our </string>
+    <string name="terms_of_use">Terms of Use </string>
+    <string name="and">and </string>
+    <string name="confirm">confirm you have read our  </string>
+    <string name="privacy_policy">Privacy Policy </string>
+
+    // activity_signin Strings
+
+    <string name="signin_email">Email</string>
+    <string name="signin_password">Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="sign_in">Sign in</string>
+
+    // activity_signup Strings
+
+
+    <string name="signup_email">Email</string>
+    <string name="signup_password">Create Password</string>
+    <string name="nickname">Nickname</string>
+    <string name="therapist_refer">Therapist will refer to you using this name</string>
+    <string name="get_started">Get started</string>
+
+
+    <string name="string_next">Next</string>
+    <string name="string_share">Share</string>
+
+
+    <string name="gallery">GALLERY</string>
+    <string name="photo">PHOTO</string>
+    <string name="string_open_camera">Open Camera</string>
+    <string name="selected_image">selected_image</string>
+    <string name="selected_bitmap">selected_bitmap</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="therapist_one">I am a Licensed Professsional Counselor who operates from an eclectic perspective. I have a skilled background in working with individuals deadling with many different mental health and substance abuse issues. I consider myself to be solutions focused and strategic in my approach. Altough eclectic, I am grounded in the CBT and DBT models.</string>
+
+
+
+
+
+    <string name="sign_in_with_email">Sign in with email</string>
+
+    <string name="facebook_app_id">2264153673617056</string>
+    <string name="fb_login_protocol_scheme">fb2264153673617056</string>
+    <string name="loginFacebookButton">Sign in with Facebook</string>
+
+
+
+    <string name="Login">Log In</string>
+    <string name="signup">Don\'t have an Account? <b>Sign Up</b></string>
+    <string name="label1">Don\'t wait</string>
+    <string name="logo_name">Pukaar- Reaching out to All</string>
+    <string name="tag_line">Reaching out to All</string>
+    <string name="label2">Log in or create a new account now</string>
+    <string name="password">Enter Password</string>
+    <string name="social">Or Log In using</string>
+    <string name="facebook">Facebook</string>
+</resources>

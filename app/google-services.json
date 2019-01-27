@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "132739694919",
+    "firebase_url": "https://pukaarsignin.firebaseio.com",
+    "project_id": "pukaarsignin",
+    "storage_bucket": "pukaarsignin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132739694919:android:17f420203961f69a",
+        "android_client_info": {
+          "package_name": "wasif.whatevervalue.com.pukaarapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132739694919-9vj0jt4de7m9mkkv9vna3sfm5l18v5e3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "wasif.whatevervalue.com.pukaarapp",
+            "certificate_hash": "9e436e7c696566b023218e9b47e9135cf7eaa0a5"
+          }
+        },
+        {
+          "client_id": "132739694919-s3kf7qoobsmiv08mjgls7rbvcu74ld1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsXtu-3nrzXSe0dbsVQdF3dkZoY0nUP8w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132739694919-kbolare1o4sua0lpqn054u5p3nn6ms5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

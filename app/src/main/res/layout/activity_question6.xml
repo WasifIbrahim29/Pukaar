@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin1"
+            android:layout_weight="30">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/part2"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="70"
+            android:id="@+id/lin2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/question1"
+                android:text="What do you think you're suffering from?"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer1"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="anxiety"
+                android:text="Anxiety"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer2"
+                android:tag="depression"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Depression"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer3"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="self_harm_and_personality_disorders"
+                android:text="Self-harm and Personality Disorders"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer4"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="post_dramatic_stress_disorder"
+                android:text="PSTD ( Post dramatic stress disorder )"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer5"
+                android:tag="relationships_family_or_friends"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Relationships ( Family or Friends)"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer6"
+                android:tag="suicidal_thoughts"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Suicidal Thoughts"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer7"
+                android:tag="drug_addiction"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Drug Addiction"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/dark_blue"
+                android:id="@+id/answer8"
+                android:tag="work_life_issues"
+                android:layout_marginLeft="30dp"
+                android:text="Work-life issues"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer9"
+                android:tag="mood_disorders"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Mood Disorders"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer10"
+                android:tag="anger_management"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Anger Management"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer11"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="emotional_regulations"
+                android:text="Emotional Regulations"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer12"
+                android:tag="phobia"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Phobia"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer13"
+                android:tag="self_esteem_issues"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Self-Esteem issues"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer14"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="trauma_and_abuse"
+                android:text="Trauma and Abuse"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer15"
+                android:tag="schizophrenia"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Schizophrenia"/>
+
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer16"
+                android:tag="headache_management"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Headache Management"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer17"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="health_counseling"
+                android:text="Health Counseling"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer18"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="personality_disorder"
+                android:text="Personality Disorder"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Let's get started."
+                android:textSize="15sp"
+                android:id="@+id/button1"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:background="@color/dark_blue"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</ScrollView>

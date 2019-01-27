@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin1"
+            android:orientation="vertical">
+
+
+            <!-- toolbar -->
+            <include layout="@layout/snippet_form_toolbar"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin2"
+            android:layout_below="@+id/lin1"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/img1"
+                app:civ_border_color="@color/grey"
+                app:civ_border_width="1dp" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/lin2">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/therapist_name"
+                android:hint="Enter Name"
+                android:textSize="17sp"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin31"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lin3">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/therapist_email"
+                android:hint="Enter Email"
+                android:textSize="17sp"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin32"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lin31">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/therapist_password"
+                android:hint="Enter Password"
+                android:textSize="17sp"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lin32">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/therapist_phoneNo"
+                android:hint="Enter Phone Number"
+                android:textSize="17sp"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin5"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lin4">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/therapist_description"
+                android:hint="Enter Description"
+                android:textSize="17sp"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin6"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lin5">
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer1"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="anxiety"
+                android:text="Anxiety"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer2"
+                android:tag="depression"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Depression"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer3"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="self_harm_and_personality_disorders"
+                android:text="Self-harm and Personality Disorders"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer4"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="post_dramatic_stress_disorder"
+                android:text="PSTD ( Post dramatic stress disorder )"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer5"
+                android:tag="relationships_family_or_friends"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Relationships ( Family or Friends)"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer6"
+                android:tag="suicidal_thoughts"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Suicidal Thoughts"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer7"
+                android:tag="drug_addiction"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Drug Addiction"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/dark_blue"
+                android:id="@+id/answer8"
+                android:tag="work_life_issues"
+                android:layout_marginLeft="30dp"
+                android:text="Work-life issues"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer9"
+                android:tag="mood_disorders"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Mood Disorders"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer10"
+                android:tag="anger_management"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Anger Management"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer11"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="emotional_regulations"
+                android:text="Emotional Regulations"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer12"
+                android:tag="phobia"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Phobia"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer13"
+                android:tag="self_esteem_issues"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Self-Esteem issues"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer14"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="trauma_and_abuse"
+                android:text="Trauma and Abuse"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer15"
+                android:tag="schizophrenia"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Schizophrenia"/>
+
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer16"
+                android:tag="headache_management"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:text="Headache Management"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer17"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="health_counseling"
+                android:text="Health Counseling"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:id="@+id/answer18"
+                android:textColor="@color/dark_blue"
+                android:layout_marginLeft="30dp"
+                android:tag="personality_disorder"
+                android:text="Personality Disorder"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin7"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lin6">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Services:"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin8"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/lin7"
+            android:orientation="vertical">
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Messaging"
+                android:id="@+id/checkbox_messaging"
+                android:textColor="@color/dark_grey"
+                android:textSize="17sp"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audio call"
+                android:id="@+id/checkbox_audioCall"
+                android:textColor="@color/dark_grey"
+                android:textSize="17sp"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video call"
+                android:id="@+id/checkbox_videoCall"
+                android:textColor="@color/dark_grey"
+                android:textSize="17sp"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One on one meeting"
+                android:id="@+id/checkbox_OneonOne"
+                android:textColor="@color/dark_grey"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@id/lin9"
+            android:layout_below="@id/lin8"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time Availability:"
+                android:textColor="@color/black"
+                android:textSize="19sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin10"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin9">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/mon"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin11"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuesday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/tues"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin12"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin11">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wednesday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/wed"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin13"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thursday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/thurs"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin14"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin13">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/fri"
+                android:textSize="17sp"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin15"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/sat"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@id/lin16"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/lin15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sunday: "
+                android:textSize="17sp"
+                />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/sun"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/lin17"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/lin16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Licensing:"
+                android:textColor="@color/black"
+                android:textSize="19sp"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/license"
+                android:hint="Add license"
+                android:textSize="17sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lin18"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/lin17">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Therapist"
+                android:background="@color/dark_blue"
+                android:textColor="@color/white"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

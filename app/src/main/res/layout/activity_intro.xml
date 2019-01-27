@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Session.SessionActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background1" />
+
+
+    <ImageView
+        android:id="@+id/image_ariana"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.0"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/lin7">
+
+
+
+        <TextView
+            android:id="@+id/textlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/wonderbar"
+            android:text="@string/app_name_first_part"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textlogo1"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/wonderbar"
+            android:text="@string/app_name_second_part"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_width="322dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="185dp"
+        android:orientation="vertical">
+
+        <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/login_button"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            facebook:com_facebook_login_text="Sign in with Facebook" />
+
+        <com.shobhitpuri.custombuttons.GoogleSignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="322dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/sign_in_with_google"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin2"
+        android:layout_width="317dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/lin1"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="138dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="26dp"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/OR"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+
+        <View
+            android:layout_width="138dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="26dp"
+            android:background="#c0c0c0" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin3"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_below="@id/lin2"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/sign_with_email"
+            android:layout_width="317dp"
+            android:layout_height="37dp"
+            android:layout_marginBottom="164dp"
+            android:layout_marginTop="15dp"
+            android:background="#1b75bc"
+            android:drawableLeft="@drawable/ic_email"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:text="@string/sign_in_with_email"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin4"
+        android:layout_width="219dp"
+        android:layout_height="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/lin1"
+        android:layout_below="@+id/lin3"
+        android:layout_marginBottom="125dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/noAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginBottom="142dp"
+            android:text="@string/dont_have_an_account"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/SignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_alignEnd="@+id/textlogo"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="102dp"
+            android:layout_marginLeft="6dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/dark_blue" />
+
+    <LinearLayout
+        android:id="@+id/lin5"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginBottom="26dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/by_proceeding"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/terms"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/terms_of_use"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/and"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:text="@string/and"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin6"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_alignStart="@+id/lin5"
+        android:layout_below="@+id/lin5"
+        android:layout_marginTop="-37dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/privacyPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
