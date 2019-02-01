@@ -1,6 +1,7 @@
 package wasif.whatevervalue.com.pukaarapp.Session;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -18,11 +19,22 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import com.facebook.FacebookSdk;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
+import wasif.whatevervalue.com.pukaarapp.Login.IntroActivity;
+import wasif.whatevervalue.com.pukaarapp.Login.LoginActivity;
+import wasif.whatevervalue.com.pukaarapp.Models.User;
 import wasif.whatevervalue.com.pukaarapp.More.MoreActivity;
 import wasif.whatevervalue.com.pukaarapp.R;
 import wasif.whatevervalue.com.pukaarapp.Utils.BottomNavigationViewHelper;
+import wasif.whatevervalue.com.pukaarapp.Utils.FirebaseMethods;
 import wasif.whatevervalue.com.pukaarapp.Utils.SectionsPagerAdapter;
 
 public class SessionActivity extends AppCompatActivity  {
@@ -37,6 +49,18 @@ public class SessionActivity extends AppCompatActivity  {
     private FrameLayout mFrameLayout;
     private RelativeLayout mRelativeLayout;
 
+
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference myRef;
+    private FirebaseMethods mFirebaseMethods;
+
+
+    //firebase
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mUserRef;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +70,9 @@ public class SessionActivity extends AppCompatActivity  {
         mFrameLayout = (FrameLayout) findViewById(R.id.container);
         mRelativeLayout = (RelativeLayout) findViewById(R.id.relLayoutParent);
 
+        setupFirebaseAuth();
         setupViewPager();
 
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        Log.d("AppLog", "key:" + FacebookSdk.getApplicationSignature(this));
 
     }
 
@@ -71,4 +94,57 @@ public class SessionActivity extends AppCompatActivity  {
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_arrow);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_arrow);
     }
+
+    private void setupFirebaseAuth(){
+        Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
+
+
+        mAuth = FirebaseAuth.getInstance();
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                //check if the user is logged in
+                checkCurrentUser(user);
+
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
+    }
+
+
+    public void goToIntroPage(){
+        Intent intent= new Intent(this,IntroActivity.class);
+        startActivity(intent);
+    }
+
+    private void checkCurrentUser(FirebaseUser user){
+        Log.d(TAG, "checkCurrentUser: checking if user is logged in.");
+
+        if(user == null){
+            Intent intent = new Intent(mContext, LoginActivity.class);
+            startActivity(intent);
+        }
+    }
+    private void avoidLogin(){
+        Log.d(TAG, "checkCurrentUser: checking if user is logged in.");
+
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        FirebaseUser user= firebaseAuth.getCurrentUser();
+
+        if(user != null){
+            Intent intent = new Intent(mContext, LoginActivity.class);
+            startActivity(intent);
+        }
+    }
+
 }

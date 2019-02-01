@@ -2,6 +2,7 @@ package wasif.whatevervalue.com.pukaarapp.Admin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -194,6 +195,11 @@ public class RecyclerViewAdapter1 extends RecyclerView.Adapter<RecyclerViewAdapt
                     myRef.child(therapist_current_id).child("assignedTemp").setValue("none");
 
                     myRef = mFirebaseDatabase.getReference("therapists");
+                }
+                else if(!therapist.getTherapist_id().equals(therapist_current_id) && !therapist.getAssignedTemp().equals("none")){
+
+                    myRef = mFirebaseDatabase.getReference("therapists");
+                    myRef.child(therapist.getTherapist_id()).child("assignedTemp").setValue("none");
                 }
             }
         }

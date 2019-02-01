@@ -180,38 +180,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                                                 Toast.makeText(LoginActivity.this, "Auth failed", LENGTH_SHORT).show();
                                                                                 //mProgressBar.setVisibility(View.GONE);
                                                                                 //mPleaseWait.setVisibility(View.GONE);
-                                                                            } else {
-
-                                                                                String current_user_id = mAuth.getCurrentUser().getUid();
-
-                                                                                Log.d(TAG, "onComplete: " + current_user_id);
-
-                                                                                checkTherapist(new FirebaseCallBack2() {
-                                                                                    @Override
-                                                                                    public void onCallback(String isThisTherapist) {
-
-                                                                                        Log.d(TAG, "onCallback: " + isThisTherapist);
-
-                                                                                        if (isThisTherapist.equals("IamTherapist")) {
-                                                                                            Log.d(TAG, "onCallback: here inside therapist");
-                                                                                            goToUserList();
-                                                                                        }
-
-                                                                                    }
-                                                                                }, current_user_id);
-
-
-                                                                                checkUser(new FirebaseCallBack1() {
-                                                                                    @Override
-                                                                                    public void onCallback(Boolean isComingFirstTime) {
-                                                                                        Log.d(TAG, "onCallback: "+ isComingFirstTime);
-                                                                                        if(!isComingFirstTime.equals(true)){
-                                                                                            Log.d(TAG, "onCallback: in user shit");
-                                                                                            goToIntroPage();
-                                                                                        }
-                                                                                    }
-                                                                                });
-
+                                                                            } else{
+                                                                                checkThePerson();
                                                                             }
                                                                         }
                                                                     });
@@ -231,6 +201,84 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void goToAdminPanel(){
         Intent intent=new Intent(this, AdminPanel.class);
         startActivity(intent);
+    }
+
+    private void checkThePerson(){
+
+        String current_user_id = mAuth.getCurrentUser().getUid();
+
+        Log.d(TAG, "onComplete: " + current_user_id);
+
+        checkTherapist(new FirebaseCallBack2() {
+            @Override
+            public void onCallback(String isThisTherapist) {
+
+                Log.d(TAG, "onCallback: " + isThisTherapist);
+
+                if (isThisTherapist.equals("IamTherapist")) {
+                    Log.d(TAG, "onCallback: here inside therapist");
+                    goToUserList();
+                }
+                else{
+                    checkUser(new FirebaseCallBack1() {
+                        @Override
+                        public void onCallback(String therapistIsAssigned) {
+                            Log.d(TAG, "onCallback: "+ therapistIsAssigned);
+                            if(!therapistIsAssigned.equals("therapistAssigned")){
+                                Log.d(TAG, "onCallback: in user shit");
+                                goToIntroPage();
+                            }
+                            else{
+                                goToSessionActivity();
+                            }
+                        }
+                    });
+                }
+            }
+        }, current_user_id);
+    }
+
+
+    private void checkUser(final FirebaseCallBack1 firebaseCallback){
+
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        myRef = mFirebaseDatabase.getReference("users");
+
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                String found="false";
+
+                for (DataSnapshot ds: dataSnapshot.getChildren()){
+
+                    User user= ds.getValue(User.class);
+                    if(!user.getAssignedToTherapist().equals("none")){
+                        found="true";
+                        break;
+                    }
+                }
+
+                if(found.equals("true")){
+                    firebaseCallback.onCallback("therapistAssigned");
+                }
+                else{
+                    firebaseCallback.onCallback("therapistNotAssigned");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+
+    public interface FirebaseCallBack1 {
+        void onCallback(String isUserAvailable);
     }
 
     public void goToUserList(){
@@ -268,33 +316,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void checkUser(final FirebaseCallBack1 firebaseCallback){
-
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference("users");
-
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot ds: dataSnapshot.getChildren()){
-
-                    User user= ds.getValue(User.class);
-                    if(user.getStatus().equals("firstTime")){
-                        firebaseCallback.onCallback(true);
-                    }
-                }
-
-                //firebaseCallback.onCallback(false);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
 
     private void checkTherapist(final FirebaseCallBack2 firebaseCallback, final String therapistID){
 
@@ -306,19 +327,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                String found="false";
+
                 for (DataSnapshot ds: dataSnapshot.getChildren()){
 
                     Therapist therapist= ds.getValue(Therapist.class);
                     if(therapist.getTherapist_id().equals(therapistID)){
                         Log.d(TAG, "onDataChange: matched");
-                        firebaseCallback.onCallback("IamTherapist");
+                        found="true";
+                        break;
                     }
                 }
-
-                //firebaseCallback.onCallback("IamNotTherapist");
+                if(found.equals("true")){
+                    firebaseCallback.onCallback("IamTherapist");
+                }
+                else{
+                    firebaseCallback.onCallback("IamNotTherapist");
+                }
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -328,9 +355,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public interface FirebaseCallBack1 {
-        void onCallback(Boolean isUserAvailable);
-    }
 
     public interface FirebaseCallBack2 {
         void onCallback(String isThisTherapist);
